@@ -51,13 +51,13 @@ public class PostControllerDocTest {
         postRepository.save(post);
 
         // expected
-        this.mockMvc.perform(get("/posts/{postId}",1L)
+        mockMvc.perform(get("/posts/{postId}", 1L)
                         .accept(APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andDo(document("post-inquiry",
                         pathParameters(
-                            parameterWithName("postId").description("게시글 ID")
+                                parameterWithName("postId").description("게시글 ID")
                         ),
                         responseFields(
                                 fieldWithPath("id").description("게시글 ID"),
@@ -79,7 +79,7 @@ public class PostControllerDocTest {
         String json = objectMapper.writeValueAsString(request);
 
         // expected
-        this.mockMvc.perform(post("/posts")
+        mockMvc.perform(post("/posts")
                         .contentType(APPLICATION_JSON)
                         .accept(APPLICATION_JSON)
                         .content(json))
@@ -87,8 +87,7 @@ public class PostControllerDocTest {
                 .andExpect(status().isOk())
                 .andDo(document("post-create",
                         requestFields(
-                                fieldWithPath("title").description("제목")
-                                        .attributes(key("constraint").value("좋은제목 입력해주세요.")),
+                                fieldWithPath("title").description("제목").attributes(key("constraint").value("제목 입력하세요")),
                                 fieldWithPath("content").description("내용").optional()
                         )
                 ));

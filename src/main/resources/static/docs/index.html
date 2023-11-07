@@ -437,7 +437,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body class="article toc2 toc-left">
+<body class="book toc2 toc-left">
 <div id="header">
 <h1>준로그 API</h1>
 <div class="details">
@@ -446,18 +446,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_글_단건조회">글 단건조회</a>
-<ul class="sectlevel2">
-<li><a href="#_요청">요청</a></li>
-<li><a href="#_응답">응답</a></li>
-</ul>
-</li>
-<li><a href="#_글_작성">글 작성</a>
-<ul class="sectlevel2">
-<li><a href="#_요청_2">요청</a></li>
-<li><a href="#_응답_2">응답</a></li>
-</ul>
-</li>
+<li><a href="#_글_단건조회">글 단건조회</a></li>
+<li><a href="#_글_작성">글 작성</a></li>
 </ul>
 </div>
 </div>
@@ -555,27 +545,40 @@ Host: api.junnyjunny.com
 {"title":"준형맨","content":"반포자이"}</code></pre>
 </div>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>|===
-    |Path|Type|Description|Optional|Constraint</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>|title
-|String
-|제목
-|
-| 좋은제목 입력해주세요.
-|content
-|String
-|내용
-|Y
-|
-|===</pre>
-</div>
-</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Path</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Optional</th>
+<th class="tableblock halign-left valign-top">Constraint</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">title</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">제목</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">제목 입력하세요</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">내용</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Y</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect2">
 <h3 id="_응답_2"><a class="link" href="#_응답_2">응답</a></h3>
@@ -591,7 +594,7 @@ Host: api.junnyjunny.com
 <div id="footer">
 <div id="footer-text">
 Version 0.0.1-SNAPSHOT<br>
-Last updated 2023-10-28 18:53:01 +0900
+Last updated 2023-10-29 14:53:53 +0900
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">

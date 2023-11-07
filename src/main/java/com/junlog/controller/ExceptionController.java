@@ -16,10 +16,10 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @ControllerAdvice
 public class ExceptionController {
 
+    @ResponseBody
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    @ResponseBody
-    public ErrorResponse invalidRequestHandler(MethodArgumentNotValidException e){
+    public ErrorResponse invalidRequestHandler(MethodArgumentNotValidException e) {
         ErrorResponse response = ErrorResponse.builder()
                 .code("400")
                 .message("잘못된 요청입니다.")
@@ -34,7 +34,7 @@ public class ExceptionController {
 
     @ResponseBody
     @ExceptionHandler(JunlogException.class)
-    public ResponseEntity<ErrorResponse> junlogException(JunlogException e){
+    public ResponseEntity<ErrorResponse> hodologException(JunlogException e) {
         int statusCode = e.getStatusCode();
 
         ErrorResponse body = ErrorResponse.builder()
@@ -48,6 +48,4 @@ public class ExceptionController {
 
         return response;
     }
-
-
 }

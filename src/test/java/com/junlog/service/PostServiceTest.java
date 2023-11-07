@@ -60,7 +60,6 @@ class PostServiceTest {
                 .title("foo")
                 .content("bar")
                 .build();
-
         postRepository.save(requestPost);
 
         // when
@@ -83,6 +82,7 @@ class PostServiceTest {
                         .content("bar1" + i)
                         .build())
                 .collect(Collectors.toList());
+
         postRepository.saveAll(requestPosts);
 
         PostSearch postSearch = PostSearch.builder()

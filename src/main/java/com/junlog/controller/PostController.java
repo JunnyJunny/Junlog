@@ -19,8 +19,7 @@ public class PostController {
 
     private final PostService postService;
 
-    // 글 등록, 글 단건 조회, 글 리스트 조회
-    // CRUD -> Create, Read, Update, Delete
+    // CRUD
 
     @PostMapping("/posts")
     public void post(@RequestBody @Valid PostCreate request) {
@@ -42,7 +41,6 @@ public class PostController {
     public void edit(@PathVariable Long postId, @RequestBody @Valid PostEdit request){
         postService.edit(postId, request);
     }
-
     @DeleteMapping("/posts/{postId}")
     public void delete(@PathVariable Long postId){
         postService.delete(postId);
