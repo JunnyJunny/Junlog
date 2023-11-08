@@ -7,3 +7,8 @@ Content-Type: application/json
   "email": "junhyeung12@gmail.com",
   "password": "1234"
 }
+
+### 인증 페이지 요청
+GET http://localhost:8080/foo
+Content-Type: application/json
+Cookie: SESSION=9e01bd7e-7eee-4261-b533-63e815acb973
