@@ -1,5 +1,6 @@
 package com.junlog.controller;
 
+import com.junlog.config.data.UserSession;
 import com.junlog.request.PostCreate;
 import com.junlog.request.PostEdit;
 import com.junlog.request.PostSearch;
@@ -19,7 +20,16 @@ public class PostController {
 
     private final PostService postService;
 
-    // CRUD
+    @GetMapping("/foo")
+    public Long foo(UserSession userSession) {
+        log.info(">>>{}", userSession.id);
+        return userSession.id;
+    }
+
+    @GetMapping("/bar")
+    public String bar(UserSession userSession) {
+        return "인증이 필요한 페이지";
+    }
 
     @PostMapping("/posts")
     public void post(@RequestBody @Valid PostCreate request) {

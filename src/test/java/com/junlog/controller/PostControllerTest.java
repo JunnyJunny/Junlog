@@ -76,6 +76,7 @@ class PostControllerTest {
 
         // when
         mockMvc.perform(post("/posts")
+                        .header("authorization","junny")
                         .contentType(APPLICATION_JSON)
                         .content(json))
                 .andExpect(status().isOk())

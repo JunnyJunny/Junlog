@@ -7,7 +7,7 @@ plugins {
 
 group = 'com.junlog'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '17'
+sourceCompatibility = '11'
 
 configurations {
     compileOnly {
@@ -64,6 +64,8 @@ asciidoctor {
 }
 
 bootJar {
+    enabled = true
+
     dependsOn asciidoctor
 
     copy{
@@ -72,6 +74,9 @@ bootJar {
     }
 }
 
+jar {
+    enabled = false
+}
 
 
 
