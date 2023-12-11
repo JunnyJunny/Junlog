@@ -14,13 +14,11 @@ public abstract class JunlogException extends RuntimeException {
         super(message);
     }
 
-    public JunlogException(String message, Throwable cause) {
-        super(message, cause);
+    public JunlogException(String message, Throwable cause) {super(message, cause);
     }
 
     public abstract int getStatusCode();
 
-    public void addValidation(String fieldName, String message){
-        validation.put(fieldName, message);
+    public void addValidation(String fieldName, String message){validation.put(fieldName, message);
     }
 }

@@ -34,7 +34,7 @@ public class ExceptionController {
 
     @ResponseBody
     @ExceptionHandler(JunlogException.class)
-    public ResponseEntity<ErrorResponse> hodologException(JunlogException e) {
+    public ResponseEntity<ErrorResponse> junlogException(JunlogException e) {
         int statusCode = e.getStatusCode();
 
         ErrorResponse body = ErrorResponse.builder()
